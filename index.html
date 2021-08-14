@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+	body {
+		background-color: aliceblue;}
+		
+	.container {
+		width: 70%;
+		height: 100%;
+		position: relative;
+		top: 20%;
+		left: 20%;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		color: darkslateblue;}
+	.down {
+		width: 150%;
+		height: 100%;
+		position: relative;
+		right: 0%;
+		background-color: white;
+		padding: 8px;
+		object-fit: fill;
+		padding-left: 15px;
+		padding-right: 15px;
+		font-family: verdana;
+		box-sizing: border-box;
+		border-radius: 0px 20px 20px 0px;
+		}
+		
+	.drawers {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;}
+		
+	button {
+		float: right;
+		width: 10%;
+		border: 0px;
+		padding: 7px;
+		border-radius: 20px;}
+		
+	h6 > img {
+		float: left;
+		border-radius: 20px;
+		width: 10%;
+		margin-right: 5px;
+		}
+	h6 {
+		line-height: 15px;
+		}
+	.options {
+		position: relative;
+		bottom: 37%;
+		left: 60%;
+		background-color: black;
+		border-radius: 10px;
+		width: 0%;
+		display: flex;
+		transition: width 0.5s, opacity 0.3s;
+		opacity: 0;
+		}
+		
+	.options button, .options p {
+		margin-left: 10px;
+		}
+	.options button {
+		 background-color: black;
+		 transition: transform 0.3s;}
+	.options button:hover {
+		transform: scale(1.3);
+		}
+	.options:after {
+		position: absolute;
+		left: 45%;
+		top: 100%;
+		width: 0px;
+		height: 0px;
+		border: 10px solid transparent;
+		border-top-color: black;
+		content: "";
+		}
+	@media screen and (max-width: 740px) {
+		.container {
+			display: block;}
+		.down {
+			width: 80%;
+			height: 150%;
+			position: relative;
+			left: 5%;
+			font-size: 100%;
+			border-radius: 0px 0px 20px 20px;}
+		.drawers {
+			width: 80%;
+			height: 100%;
+			position: relative;
+			left: 5%;
+			border-radius: 20px 20px 0px 0px;}
+		.container {
+			left: 0px;
+			margin: 10%;}
+		.options{
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			overflow: hidden;
+			width: 80%;}
+		h6 {
+			margin-bottom: 0px;
+			}
+			}
+		@media screen and (min-width: 740px) {
+			
+			.options {bottom: 40%;
+		left: 55%;
+		
+		}
+		
+		@media screen and (max-width: 400px) {
+			button {
+		width: 2%;
+		padding: 7px;
+		border-radius: 50px;}
+		}
+  </style>
+</head>
+<body>
+ <div class= "container">
+ <div><img class= "drawers" src= "images/drawers.jpg" alt= "image of michelle"></div>
+ <div class= 'down'> <h4>Shift the overall look and feel by adding these wonderful 
+  touches to furniture in your home</h4>
+
+  <p>Ever been in a room and felt like something was missing? Perhaps 
+  it felt slightly bare and uninviting. I’ve got some simple tips 
+  to help you make any room feel complete.</p>
+
+ <h6><img src= "images/avatar-michelle.jpg" alt= "image of michelle"><button id= "share" ><img src= "images/icon-share.svg" alt= "share button" ></button> Michelle Appleton <br> <span>28 Jun 2020 </span> </h6>
+  
+
+ <div class= "options">
+	<p>SHARE </p> 
+	<button><a href= "https://facebook.com/share"><img src= "images/icon-facebook.svg"></a></button>
+	<button><a href= "https://twitter.com/share"> <img src= "images/icon-twitter.svg"></a></button>
+	<button><a href= "https://pininterest.com/share"> <img src= "images/icon-pinterest.svg"></a></button>
+ </div> 
+  </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Adebisi Oluwafemi</a>.
+  </div>
+  
+</body>
+<script> 
+ let shareButton = document.querySelector("#share");
+ shareButton.addEventListener("click", function() {
+	let options = document.querySelector(".options");
+	if (options.style.width !== "80%"){
+	 options.style.width = "80%";
+	 options.style.opacity = "1";}
+	 else {
+		options.style.width = "0%";
+		options.style.opacity = "0";}
+	 }
+	);
+	
+ </script>
+</html>
